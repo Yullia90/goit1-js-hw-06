@@ -1,6 +1,5 @@
 * {
   box-sizing: border-box;
-  list-style-type: none;
 }
 
 body {
@@ -24,9 +23,12 @@ button {
   padding: 8px 12px;
   cursor: pointer;
 }
-img {
+.gallery {
   display: flex;
-  flex-flow: column wrap;
-  justify-content: space-around;
-  padding-bottom: 15px;
+  gap: 10px;
+  list-style: none;
+  align-items: center;
+}
+.gallery__img {
+  width: 320px;
 }
