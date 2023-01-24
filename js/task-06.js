@@ -28,20 +28,18 @@
 //=========================//
 const inputEl = document.querySelector("#validation-input");
 const wordLengthEl = Number(inputEl.dataset.length);
-console.log(inputEl, wordLengthEl);
 
-inputEl.addEventListener("blur", onFormText);
-
-function onFormText(event) {
-  if (event.currentTarget.value.trim().length === wordLengthEl) {
+inputEl.addEventListener("blur", (event) => {
+  if (event.currentTarget.value.length === wordLengthEl) {
     input.classList.add("valid");
     input.classList.remove("invalid");
   } else {
-    input.classList.add("valid");
-    input.classList.remove("invalid");
+    input.classList.add("invalid");
   }
-  console.log(event.currentTarget.value.trim().length === wordLengthEl);
-}
+  console.log(event.currentTarget.value.length === wordLengthEl);
+});
+console.log(wordLengthEl);
+
 //Яка кількість символів повинна бути в інпуті, зазначається в його
 //атрибуті data - length.Якщо введена правильна кількість символів,
 //то border інпуту стає зеленим,якщо неправильна кількість - червоним.
