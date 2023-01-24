@@ -11,4 +11,4 @@ const onBtmNameChange = (event) => {
     ? (spanEl.textContent = "Anonymous")
     : (spanEl.textContent = event.currentTarget.value.trim());
 };
-inputEl.addEventListener("sublim", onBtmNameChange);
+inputEl.addEventListener("input", onBtmNameChange);
