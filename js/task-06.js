@@ -1,27 +1,49 @@
 //Напиши скрипт, який під час втрати фокусу на інпуті(подія blur),
 //перевіряє його вміст щодо правильної кількості введених символів.
+//=========================//
+// const inputEl = document.querySelector("#validation-input");
+// inputEl.addEventListener("blur", onInputBlur);
 
-//<input
-//  type="text"
-//  id="validation-input"
-//  data-length="6"
-//  placeholder="Please enter 6 symbols"
-///>
+// function onInputBlur(event) {
+//   if (event.target.value.length === 6) {
+//     input.classList.add("valid");
+//   } else {
+//     input.classList.remove("valid");
+//     input.classList.add("invalid");
+//   }
+// }
+//=========================//
+// const inputEl = document.querySelector("#validation-input");
+// const wordLengthEl = Number(inputEl.dataset.length);
+// console.log(inputEl, wordLengthEl);
 
+// inputEl.addEventListener("blur", (event) => {
+//   if (event.currentTarget.value.length === wordLengthEl) {
+//     input.classList.replace("invalid", "valid");
+//   } else {
+//     input.classList.replace("valid", "invalid");
+//   }
+//   console.log(event.currentTarget.value.length === wordLengthEl);
+// });
+//=========================//
+const inputEl = document.querySelector("#validation-input");
+const wordLengthEl = Number(inputEl.dataset.length);
+console.log(inputEl, wordLengthEl);
+
+inputEl.addEventListener("blur", onFormText);
+
+function onFormText(event) {
+  if (event.currentTarget.value.trim().length === wordLengthEl) {
+    input.classList.add("valid");
+    input.classList.remove("invalid");
+  } else {
+    input.classList.add("valid");
+    input.classList.remove("invalid");
+  }
+  console.log(event.currentTarget.value.trim().length === wordLengthEl);
+}
 //Яка кількість символів повинна бути в інпуті, зазначається в його
 //атрибуті data - length.Якщо введена правильна кількість символів,
 //то border інпуту стає зеленим,якщо неправильна кількість - червоним.
 //Для додавання стилів використовуй CSS - класи valid і invalid, які
 //ми вже додали у вихідні файли завдання.
-
-//#validation-input {
-//  border: 3px solid #bdbdbd;
-//}
-
-//#validation-input.valid {
-//  border-color: #4caf50;
-//}
-
-//#validation-input.invalid {
-//  border-color: #f44336;
-//}
