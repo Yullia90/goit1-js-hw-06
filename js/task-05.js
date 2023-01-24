@@ -3,7 +3,7 @@
 //у спані повинен відображатися рядок "Anonymous".
 
 const inputEl = document.querySelector("#name-input");
-const spanEl = inputEl.querySelector("#name-output");
+const spanEl = document.querySelector("#name-output");
 console.log(inputEl, spanEl);
 
 const onBtmNameChange = (event) => {

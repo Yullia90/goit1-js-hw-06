@@ -28,6 +28,7 @@
 //=========================//
 const inputEl = document.querySelector("#validation-input");
 const wordLengthEl = Number(inputEl.dataset.length);
+console.log(wordLengthEl);
 
 inputEl.addEventListener("blur", (event) => {
   if (event.currentTarget.value.length === wordLengthEl) {
@@ -38,7 +39,6 @@ inputEl.addEventListener("blur", (event) => {
   }
   console.log(event.currentTarget.value.length === wordLengthEl);
 });
-console.log(wordLengthEl);
 
 //Яка кількість символів повинна бути в інпуті, зазначається в його
 //атрибуті data - length.Якщо введена правильна кількість символів,
