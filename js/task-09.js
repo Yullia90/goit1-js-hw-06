@@ -8,27 +8,36 @@
 
 //Для генерування випадкового кольору використовуй функцію getRandomHexColor.
 
-const containerEl = document.querySelector(".widget");
-const spanColorText = containerEl.querySelector(".color");
-const buttonEL = containerEl.querySelector(".change-color");
-console.log(containerEl, spanColorText, buttonEL);
+// const body = document.querySelector("body");
+// const spanColorText = document.querySelector(".color");
+// const buttonEL = document.querySelector(".change-color");
 
-buttonEL.addEventListener("click", changeColor);
+// buttonEL.addEventListener("click", () => {
+//   document.body.style.backgroundColor = getRandomHexColor();
+//   document.spanColorText.textContante = document.body.style.backgroundColor;
 
-function changeColor(event) {
-  event.preventDefault();
-  console.log("object");
-  console.log(event.currentTarget);
-}
-const backgroundColorBody = document.body.style.backgroundColor;
-console.dir(backgroundColorBody);
+//   // event.preventDefault();
+// });
 
-const currentTarget = getRandomHexColor();
+// function getRandomHexColor() {
+//   return `#${Math.floor(Math.random() * 16777215)
+//     .toString(16)
+//     .padStart(6, 0)}`;
+// }
+//==============================
+const refs = {
+  changeColorBtn: document.querySelector(".change-color"),
+  body: document.querySelector("body"),
+  colorName: document.querySelector(".color"),
+};
 
 function getRandomHexColor() {
   return `#${Math.floor(Math.random() * 16777215)
     .toString(16)
     .padStart(6, 0)}`;
-
-  console.log(currentTarget);
 }
+
+refs.changeColorBtn.addEventListener("click", () => {
+  refs.body.style.backgroundColor = getRandomHexColor();
+  refs.colorName.textContent = refs.body.style.backgroundColor;
+});
