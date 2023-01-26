@@ -32,14 +32,13 @@ const wordLengthEl = Number(inputEl.dataset.length);
 console.log(wordLengthEl);
 
 inputEl.addEventListener("blur", (event) => {
+  inputEl.classList.remove("invalid", "valid");
   if (event.currentTarget.value.length === wordLengthEl) {
-    input.classList.add("valid");
-    input.classList.remove("invalid");
+    inputEl.classList.add("valid");
   } else {
-    input.classList.add("invalid");
+    inputEl.classList.add("invalid");
   }
   console.log(event.currentTarget.value.length === wordLengthEl);
-  console.log(inputEl.addEventListener);
 });
 
 //Яка кількість символів повинна бути в інпуті, зазначається в його
