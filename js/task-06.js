@@ -11,6 +11,7 @@
 //     input.classList.remove("valid");
 //     input.classList.add("invalid");
 //   }
+//   console.log(event.currentTarget.value.length === wordLengthEl);
 // }
 //=========================//
 // const inputEl = document.querySelector("#validation-input");
@@ -38,6 +39,7 @@ inputEl.addEventListener("blur", (event) => {
     input.classList.add("invalid");
   }
   console.log(event.currentTarget.value.length === wordLengthEl);
+  console.log(inputEl.addEventListener);
 });
 
 //Яка кількість символів повинна бути в інпуті, зазначається в його
